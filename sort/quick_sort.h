@@ -31,22 +31,3 @@ int quick_sort(int array[], int low, int high)
 
 	return 0;
 }
-
-int main(int argc, char **argv)
-{
-	int i = 0;
-	int array[N];
-
-	for (i = 0; i < N; ++i) {
-		array[i] = rand() % 99;
-		printf("%d ", array[i]);
-	}
-	printf("\n");
-
-	quick_sort(array, 0, N - 1);
-
-	for (i = 0; i < N; ++i)
-		printf("%d ", array[i]);
-
-	return 0;
-}

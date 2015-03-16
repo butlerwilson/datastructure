@@ -106,24 +106,3 @@ int binary_search(int array[], int low, int high, int num, int elem)
 
 	return -1;
 }
-
-int main(int argc, char **argv)
-{
-	int i = 0;
-	int array[ELENUM] = {23, 45, 2, 67, 23, 1, 89};
-	int array0[ELENUM] = {1, 3, 45, 56, 67, 78, 89,90};
-	for (i = 0; i < 7; i++)
-		printf("%d ", array0[i]);
-	printf("\n");
-
-//	direct_insert_sort(array, 7);
-//	binary_insert_sort(array, 7);
-	i = binary_search(array0, 0, 7, 8, 1);
-	if (i < 0) printf("Not found\n");
-	else
-		printf("index:%d\n", i);
-	for (i = 0; i < 7; i++)
-		printf("%d ", array[i]);
-
-	return 0;
-}

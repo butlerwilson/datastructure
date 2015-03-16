@@ -5,25 +5,6 @@
 int merge_set(int tmp[], int low, int mid, int hight, int dst[]);
 int merge_sort(int array[], int low, int high, int dst[]);
 
-int main(int argc, char **argv)
-{
-	int i = 0;
-	int array[N];
-
-	for (i = 0; i < N; ++i) {
-		array[i] = rand() % 100;
-		printf("%d ", array[i]);
-	}
-	printf("\n");
-
-	merge_sort(array, 0, N - 1, array);
-
-	for (i = 0; i < N; ++i)
-		printf("%d ", array[i]);
-
-	return 0;
-}
-
 int merge_set(int tmp[], int low, int mid, int high, int dst[])
 {
 	int index = low;
