@@ -1,4 +1,4 @@
-#define ELEMTYPE int
+#define ELEMTYPE void
 #define ELEMNUM  100
 
 typedef struct sequence_list {

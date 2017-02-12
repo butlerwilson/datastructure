@@ -25,7 +25,7 @@
 	struct list_head name = LIST_HEAD_INIT(name)
 /* The first time I add the data into the structure, badly I was wrong. Here
  * we'd better use abstract data type. So it has good externtional
- *  performance. This is really programming.
+ * performance. This is really programming.
  */
 
 static inline void INIT_LIST_HEAD(struct list_head *list)
