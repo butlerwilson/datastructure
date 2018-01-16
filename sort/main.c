@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "quick_sort.h"
+#include "insert_sort.h"
 
 int main()
 {
@@ -10,8 +10,8 @@ int main()
         printf("%d ", array[i]);
     printf("\n");
     
-    quick_sort(array, 0, 7);
-    printf("after quick_sort: ");
+    direct_insert_sort(array, 8);
+    printf("after sort: ");
     for (i = 0; i < 8; ++i)
         printf("%d ", array[i]);
     printf("\n");

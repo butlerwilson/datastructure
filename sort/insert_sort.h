@@ -28,14 +28,14 @@ is false. Then insert this elemnt into element[i].
 
 int direct_insert_sort(int array[], int num)
 {
-	int i = 0;
-	int j = 0;
-	int tmp = 0;
+	int i = 0;      //from 1 to num - 1
+	int j = 0;      //from i-1 to 0
+	int tmp = 0;    //array[i]
 
 	//a[] = { 23, 39, 2, 15, 67, 34 }
-	for (i = 0; i < num - 1; i++) {
-		tmp = array[i + 1];
-		j = i;
+	for (i = 1; i < num; i++) {
+		tmp = array[i];
+		j = i - 1;
 		while (j >= 0 && tmp < array[j]) {
 			array[j + 1] = array[j];
 			--j;
@@ -63,14 +63,32 @@ int binary_search_pos(int array[], int elem, int start, int end)
 	}
 
 	if (start > end && end >= 0)
-		if (array[end] <= elem);
+		if (array[end] <= elem)
 			return end;
-	if (start == end)
+	if (start == end) {
 		if (array[start] <= elem)
 			return start;
 		else
 			return start - 1;
+    }
 	return end;
+}
+
+int binary_search(int array[], int low, int high, int num, int elem)
+{
+	int mid = (low + high) / 2;
+
+	while (low <= high) {
+		if (elem < array[mid])
+            high = mid - 1;
+		else if (elem > array[mid])
+            low = mid + 1;
+		else
+            return mid;
+		mid = (low + high) / 2;
+	}
+
+	return -1;
 }
 
 int binary_insert_sort(int array[], int num)
@@ -83,7 +101,7 @@ int binary_insert_sort(int array[], int num)
 	for (i = 0; i < num; ++i) {
 		j = i;
 		tmp = array[i + 1];
-		index = binary_search(array, tmp, 0, i);
+		index = binary_search(array, tmp, 0, i, tmp);
 		//j != i should move elements
 		while ( j != i && j > index) {
 				array[j + 1] = array[j];
@@ -91,18 +109,7 @@ int binary_insert_sort(int array[], int num)
 		}
 		array[index + 1] = tmp;
 	}
+
+    return 0;
 }
 
-int binary_search(int array[], int low, int high, int num, int elem)
-{
-	int mid = (low + high) / 2;
-
-	while (low <= high) {
-		if (elem < array[mid]) high = mid - 1;
-		else if (elem > array[mid]) low = mid + 1;
-		else return mid;
-		mid = (low + high) / 2;
-	}
-
-	return -1;
-}
